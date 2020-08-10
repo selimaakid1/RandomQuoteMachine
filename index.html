@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const randomQuote = [
+            {
+                quote: 'We accept the love we think we deserve.',
+                author: 'Stephen Chbosky'
+            },
+            {
+                quote: 'All that you are is all that I will ever need.',
+                author: 'Ed Sheeran'
+            },
+            {
+                quote: 'You cant blame gravity for falling in love',
+                author: 'Albert Einstein'
+            },
+            
+        ]
+        window.onload = init;
+        function init() {
+        newQuote();
+
+        }
+        const newQuote = () => {
+            console.log('Quote!')
+            let quoteSize = randomQuote.length;
+            let randomNum = Math.floor(Math.random()* quoteSize)
+            let randomData  = randomQuote[randomNum];
+
+
+            document.getElementById("text").innerText = randomData.quote;    
+            document.getElementById("author").innerText = randomData.author   
+        }
+        
+    </script>
+     <script src="https://kit.fontawesome.com/a0d7e4614c.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <wrapper id='quote-box'>
+        <div id='text'></div>
+        <div id='author'></div>
+        <button id='new-quote' onClick='newQuote();'>New Quote</button>
+        <a href='http://www.twitter.com/intent/tweet' id='tweet-quote' target="='_blank '"><i class="fa fa-twitter"></i></a>
+    </wrapper>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
